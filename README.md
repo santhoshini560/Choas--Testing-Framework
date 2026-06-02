@@ -1,5 +1,4 @@
 # Choas--Testing-Framework
-# Chaos Testing Framework
  Overview
 The Chaos Testing Framework is designed to intentionally break system components to evaluate resilience, reliability, and fault tolerance. By simulating diverse failure scenarios, the framework helps uncover weaknesses and improve system robustness under stress.
 
@@ -19,13 +18,11 @@ Technologies Used:
 - **GitHub**
 - **Visual Studio Code**
 
-Usage:
-Run the chaos test suite:
-```bash
 python chaos_test.py
-Sample Output:
-===== CHAOS TEST REPORT =====
 
+SAMPLE OUTPUT:
+
+===== CHAOS TEST REPORT =====
 AI Failures: 33
 Network Failures: 35
 Database Failures: 32
@@ -37,6 +34,7 @@ Total Simulations: 50
 Total Tests Executed: 200
 Passed Tests: 79
 Failed Tests: 121
+
 Results:
 The framework successfully simulated multiple failure conditions and generated statistical reports summarizing system behavior under stress. The implementation demonstrates the concept of chaos engineering and helps evaluate system reliability and fault tolerance.
 
