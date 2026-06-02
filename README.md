@@ -23,24 +23,25 @@ python chaos_test.py
 SAMPLE OUTPUT:
 
 ===== CHAOS TEST REPORT =====
-AI Failures: 33
-Network Failures: 35
-Database Failures: 32
-Queue Overloads: 21
-Cascading Failures: 5
-Successful Tests: 79
+- AI Failures: 33
+- Network Failures: 35
+- Database Failures: 32
+- Queue Overloads: 21
+- Cascading Failures: 5
+- Successful Tests: 79
 
-Total Simulations: 50
-Total Tests Executed: 200
-Passed Tests: 79
-Failed Tests: 121
+- Total Simulations: 50
+- Total Tests Executed: 200
+- Passed Tests: 79
+- Failed Tests: 121
 
 Results:
 The framework successfully simulated multiple failure conditions and generated statistical reports summarizing system behavior under stress. The implementation demonstrates the concept of chaos engineering and helps evaluate system reliability and fault tolerance.
-
 Future Enhancements:
-Real-time monitoring dashboard
-Logging and reporting system
-Configurable failure probabilities
-Distributed system simulation
-Automated test report generation
+- Real-time monitoring dashboard  
+- Logging and reporting system  
+- Configurable failure probabilities  
+- Distributed system simulation  
+- Automated test report generation
+
+
