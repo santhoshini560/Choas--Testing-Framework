@@ -35,9 +35,11 @@ SAMPLE OUTPUT:
 - Passed Tests: 79
 - Failed Tests: 121
 
-Results:
+- Results:
 The framework successfully simulated multiple failure conditions and generated statistical reports summarizing system behavior under stress. The implementation demonstrates the concept of chaos engineering and helps evaluate system reliability and fault tolerance.
-Future Enhancements:
+
+- Future Enhancements:
+  
 - Real-time monitoring dashboard  
 - Logging and reporting system  
 - Configurable failure probabilities  
