@@ -1,0 +1,75 @@
+from ai_failure import simulate_ai_failure
+from network_failure import simulate_network_failure
+from db_failure import simulate_db_failure
+from queue_overload import simulate_queue_overload
+from cascading_failure import simulate_cascading_failure
+
+results = {
+    "AI Failures": 0,
+    "Network Failures": 0,
+    "Database Failures": 0,
+    "Queue Overloads": 0,
+    "Cascading Failures": 0,
+    "Successful Tests": 0
+}
+
+TOTAL_SIMULATIONS = 50
+
+print("===== CHAOS TEST STARTED =====\n")
+
+for i in range(TOTAL_SIMULATIONS):
+
+    # AI Failure Test
+    try:
+        simulate_ai_failure()
+        results["Successful Tests"] += 1
+    except Exception as e:
+        print(f"AI Failure triggered: {e}")
+        results["AI Failures"] += 1
+
+    # Network Failure Test
+    try:
+        simulate_network_failure()
+        results["Successful Tests"] += 1
+    except Exception as e:
+        print(f"Network Failure triggered: {e}")
+        results["Network Failures"] += 1
+
+    # Database Failure Test
+    try:
+        simulate_db_failure()
+        results["Successful Tests"] += 1
+    except Exception as e:
+        print(f"Database Failure triggered: {e}")
+        results["Database Failures"] += 1
+
+    # Queue Overload Test
+    try:
+        simulate_queue_overload()
+        results["Successful Tests"] += 1
+    except Exception as e:
+        print(f"Queue Overload triggered: {e}")
+        results["Queue Overloads"] += 1
+
+    # Cascading Failure Simulation (every 10th run)
+    if i % 10 == 0:
+        simulate_cascading_failure()
+        results["Cascading Failures"] += 1
+
+print("\n===== CHAOS TEST REPORT =====")
+
+for key, value in results.items():
+    print(f"{key}: {value}")
+
+total_tests = TOTAL_SIMULATIONS * 4
+failed_tests = (
+    results["AI Failures"]
+    + results["Network Failures"]
+    + results["Database Failures"]
+    + results["Queue Overloads"]
+)
+
+print(f"\nTotal Simulations: {TOTAL_SIMULATIONS}")
+print(f"Total Tests Executed: {total_tests}")
+print(f"Passed Tests: {results['Successful Tests']}")
+print(f"Failed Tests: {failed_tests}")
