@@ -1,0 +1,51 @@
+import random
+import time
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+class AIFailureSimulator:
+    def __init__(self):
+        self.failures = [
+            self.simulate_unresponsiveness,
+            self.simulate_incorrect_predictions,
+            self.simulate_degraded_performance
+        ]
+
+    def simulate_unresponsiveness(self):
+        """Simulate AI service becoming unresponsive."""
+        logging.info("⚠️ AI Failure: Service is unresponsive...")
+        time.sleep(5)  # mimic timeout
+        raise TimeoutError("AI model did not respond within expected time.")
+
+    def simulate_incorrect_predictions(self):
+        """Simulate AI returning wrong or random outputs."""
+        logging.info("⚠️ AI Failure: Incorrect predictions generated...")
+        fake_outputs = ["Error", "Nonsense", "Random Value", None]
+        result = random.choice(fake_outputs)
+        logging.info(f"AI returned: {result}")
+        return result
+
+    def simulate_degraded_performance(self):
+        """Simulate AI slowing down or producing partial results."""
+        logging.info("⚠️ AI Failure: Performance degraded...")
+        delay = random.randint(3, 10)
+        logging.info(f"Processing slowed down by {delay} seconds...")
+        time.sleep(delay)
+        return "Partial/Delayed Result"
+
+    def run_failure(self):
+        """Randomly trigger one of the AI failure modes."""
+        failure = random.choice(self.failures)
+        try:
+            return failure()
+        except Exception as e:
+            logging.error(f"Failure triggered: {e}")
+            return None
+
+
+if __name__ == "__main__":
+    simulator = AIFailureSimulator()
+    logging.info("🚀 Starting AI Failure Simulation...")
+    result = simulator.run_failure()
+    logging.info(f"Simulation result: {result}")
