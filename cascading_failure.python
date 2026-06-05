@@ -1,0 +1,24 @@
+import random
+
+def simulate_cascading_failure():
+    print("Chaos Test: Starting Cascading Failure Simulation...")
+
+    # Step 1: Database crash
+    print("Database Crash Occurred!")
+    db_failed = True
+
+    if db_failed:
+        # Step 2: AI service failure due to DB unavailability
+        print("AI Service Failed because DB is unavailable")
+
+        # Step 3: Network congestion triggered by retries
+        print("Network Congestion Increased due to repeated requests")
+
+        # Step 4: Queue overload caused by cascading retries
+        print("Queue Overloaded due to excessive retries")
+
+    return "Cascading Failure Simulation Complete"
+
+
+if __name__ == "__main__":
+    print(simulate_cascading_failure())
